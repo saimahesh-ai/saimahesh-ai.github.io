@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing & Thoughts — Sai Mahesh Mudavat</title>
+  <meta name="description" content="Research thoughts, essays, and updates by Sai Mahesh Mudavat on Edge AI, Vision Transformers, and Smart Agriculture.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+
+  <!-- ====== Navigation ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">S<span>.</span>M<span>.</span>M</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="writing.html" class="active">Writing</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ====== Main Content ====== -->
+  <main class="container page-content">
+
+    <section class="section reveal" id="writing">
+      <h2>Notes &amp; Thoughts</h2>
+      <p style="margin-bottom: 2rem; color: var(--text-muted); font-size: 0.95rem;">
+        A digital garden for research thoughts, essays, and field notes on AI, agriculture, and the edge.
+      </p>
+
+      <div class="card-grid">
+
+        <div class="writing-card">
+          <div class="writing-date">October 2024</div>
+          <div class="writing-title">Why Edge AI is the Future of Smart Agriculture</div>
+          <p class="writing-excerpt">
+            Most precision agriculture research assumes reliable cloud connectivity. But in rural fields across 
+            Sub-Saharan Africa and South Asia, latency and bandwidth make cloud-first architectures impractical. 
+            Edge AI flips the script — pushing intelligence to the device itself.
+          </p>
+          <a href="#" class="read-more">Read more →</a>
+        </div>
+
+        <div class="writing-card">
+          <div class="writing-date">September 2024</div>
+          <div class="writing-title">Thoughts on the Limitations of Vision Transformers in the Field</div>
+          <p class="writing-excerpt">
+            Vision Transformers achieve remarkable accuracy on curated benchmarks. But when deployed on cluttered, 
+            real-field imagery with variable lighting and occlusion, their performance tells a different story. 
+            Here's what I've learned from TinyVarNet experiments.
+          </p>
+          <a href="#" class="read-more">Read more →</a>
+        </div>
+
+        <div class="writing-card">
+          <div class="writing-date">August 2024</div>
+          <div class="writing-title">The Case for Byzantine Robustness in Federated Agricultural Systems</div>
+          <p class="writing-excerpt">
+            Federated learning promises privacy-preserving collaboration across farms. But what happens when a 
+            node is compromised — by hardware faults, adversarial attacks, or simply corrupted sensor data? 
+            Building resilience at the protocol level is essential.
+          </p>
+          <a href="#" class="read-more">Read more →</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Sai Mahesh Mudavat · Built with precision and purpose.</p>
+    </div>
+  </footer>
+
+  <!-- ====== Scripts ====== -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

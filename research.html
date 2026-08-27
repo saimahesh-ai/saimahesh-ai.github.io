@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Sai Mahesh Mudavat</title>
+  <meta name="description" content="Research interests and current projects of Sai Mahesh Mudavat: Trustworthy Lightweight AI, Byzantine-Robust Federated Learning, Vision Foundation Models, and Edge-Ready Computer Vision.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+
+  <!-- ====== Navigation ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">S<span>.</span>M<span>.</span>M</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="writing.html">Writing</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ====== Main Content ====== -->
+  <main class="container page-content">
+
+    <!-- Core Research Interests -->
+    <section class="section reveal" id="interests">
+      <h2>Core Research Interests</h2>
+      <p>My research sits at the intersection of efficient deep learning and real-world agricultural deployment, with a focus on making AI trustworthy, compact, and explainable.</p>
+      <div class="tags">
+        <span class="tag">Trustworthy Lightweight AI</span>
+        <span class="tag">Byzantine-Robust Federated Learning</span>
+        <span class="tag">Vision Foundation Models</span>
+        <span class="tag">Edge-Ready Computer Vision</span>
+        <span class="tag">Geometric Deep Learning</span>
+        <span class="tag">Explainable AI (XAI)</span>
+        <span class="tag">Linear-Cost State-Space Models</span>
+        <span class="tag">Mixed-Precision Quantization</span>
+        <span class="tag">Group-Equivariant Convolutions</span>
+        <span class="tag">Generative AI & RAG</span>
+        <span class="tag">Precision Agriculture</span>
+        <span class="tag">Cross-Crop Knowledge Graphs</span>
+      </div>
+    </section>
+
+    <!-- Current Projects -->
+    <section class="section reveal" id="projects">
+      <h2>Current Projects</h2>
+      <div class="card-grid">
+
+        <div class="card">
+          <h3>Byzantine-Robust Architectures for Edge Deployments</h3>
+          <p>
+            <strong>Problem:</strong> Federated learning systems in agricultural edge networks are vulnerable to Byzantine faults — 
+            malicious or faulty nodes can corrupt the global model, especially when communication bandwidth is limited.
+          </p>
+          <p>
+            <strong>Solution:</strong> I designed DPRS, a Byzantine-robust federated learning framework that combines INT4/INT8 
+            mixed-precision quantization with a Temporal Checkpoint Manifold for automated failover. This reduces bandwidth 
+            by 60% while sustaining 98.04% accuracy, making secure federated learning practical on resource-constrained 
+            agricultural edge devices.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Parameter-Free Dynamic Routing Networks</h3>
+          <p>
+            <strong>Problem:</strong> Existing lightweight models for crop disease classification sacrifice spatial explainability 
+            for compactness, making their predictions untrustworthy for real-field deployment on cluttered backgrounds.
+          </p>
+          <p>
+            <strong>Solution:</strong> TinyVarNet is a 28K-parameter dispersion-gated feedforward network with parameter-free 
+            dynamic routing that provides intrinsic multi-scale spatial explainability. It achieves 82.03% accuracy on 
+            highly cluttered real-field benchmarks while remaining small enough for edge hardware deployment.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Knowledge Distillation for Edge Vision Transformers</h3>
+          <p>
+            <strong>Problem:</strong> State-of-the-art Vision Transformers with 300M+ parameters are computationally infeasible 
+            for edge deployment in smart agriculture, yet smaller models lack the representational capacity for accurate 
+            disease classification.
+          </p>
+          <p>
+            <strong>Solution:</strong> LiteViT implements a cross-architecture knowledge distillation pipeline that compresses 
+            a 300M-parameter Vision Transformer into a 3.8 MB MobileViT-XXS. The distilled model achieves 99.3% accuracy 
+            at just 12.26 ms inference latency on edge hardware.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Equivariant Networks for Shortcut-Aware Recognition</h3>
+          <p>
+            <strong>Problem:</strong> Standard convolutional networks exploit background texture shortcuts when classifying crops 
+            and weeds, leading to brittle models that fail under orientation and viewpoint changes in the field.
+          </p>
+          <p>
+            <strong>Solution:</strong> E2-WeedNet is a sub-60K parameter C₈ group-equivariant convolutional network equipped 
+            with a parameter-free Group-CAM operator. This design explicitly mitigates background shortcut learning and 
+            improves orientation-robust weed recognition for practical field deployments.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Future Directions -->
+    <section class="section reveal" id="future">
+      <h2>Future Directions</h2>
+      <div class="vision-box">
+        <h3>Smart Agriculture: Hyper-Localized AI Models</h3>
+        <p>
+          My long-term vision centers on building hyper-localized AI models for agriculture that respect the incredible diversity 
+          of intercropping systems and agro-practices across different regions and environments. Rather than one-size-fits-all 
+          solutions, I envision a future where lightweight, privacy-preserving foundation models can be rapidly adapted to 
+          local crop varieties, soil conditions, and farming practices — deployed directly on edge devices in the field, 
+          empowering farmers with real-time, trustworthy decision support without requiring cloud connectivity.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Sai Mahesh Mudavat · Built with precision and purpose.</p>
+    </div>
+  </footer>
+
+  <!-- ====== Scripts ====== -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

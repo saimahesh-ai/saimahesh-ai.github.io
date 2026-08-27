@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications — Sai Mahesh Mudavat</title>
+  <meta name="description" content="Publications by Sai Mahesh Mudavat in lightweight Vision Transformers, federated learning, and edge AI for smart agriculture.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+
+  <!-- ====== Navigation ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">S<span>.</span>M<span>.</span>M</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html" class="active">Publications</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="writing.html">Writing</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ====== Main Content ====== -->
+  <main class="container page-content">
+
+    <!-- Published -->
+    <section class="section reveal" id="published">
+      <h2>Peer-Reviewed Conference Proceedings</h2>
+
+      <div class="pub-item">
+        <p class="authors">
+          <span class="author-highlight">S. M. Mudavat</span>, A. Mitra, S. P. Mohanty, and E. Kougianos
+        </p>
+        <p class="title">
+          "LiteViT: Leveraging the Power of Transformers for Edge AI in Crop Disease Classification"
+        </p>
+        <p class="venue">
+          Proceedings of the IEEE Computer Society Annual Symposium on VLSI (ISVLSI), 2025.
+        </p>
+        <div class="impact-box">
+          <strong>Impact:</strong> Compressed a 300M-parameter Vision Transformer to a 3.8 MB MobileViT-XXS model, 
+          achieving 99.3% accuracy at 12.26 ms inference latency — making state-of-the-art disease classification 
+          feasible on edge hardware for the first time.
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <p class="authors">
+          <span class="author-highlight">S. M. Mudavat</span>, A. Mitra, S. P. Mohanty, and E. Kougianos
+        </p>
+        <p class="title">
+          "FLitViT: Vision Transformers-Based Federated Learning Approach for Plant Disease Classification"
+        </p>
+        <p class="venue">
+          Proceedings of the 23rd OITS International Conference on Information Technology (OCIT), 2025.
+        </p>
+        <div class="impact-box">
+          <strong>Impact:</strong> First federated learning framework to combine Vision Transformers with privacy-preserving 
+          distributed training for agricultural disease classification across decentralized edge nodes.
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Accepted / Under Review -->
+    <section class="section reveal" id="preprints">
+      <h2>Accepted &amp; Under Review</h2>
+
+      <div class="pub-item">
+        <p class="authors">
+          <span class="author-highlight">S. M. Mudavat</span>, A. Mitra, S. P. Mohanty, and E. Kougianos
+        </p>
+        <p class="title">
+          "DPRS: Secure and Lightweight Federated Vision Transformers for Agricultural Edge AI"
+        </p>
+        <p class="venue">Accepted.</p>
+        <div class="impact-box">
+          <strong>Impact:</strong> Introduced a Byzantine-robust federated framework with INT4/INT8 mixed-precision quantization, 
+          reducing bandwidth by 60% while sustaining 98.04% accuracy via a Temporal Checkpoint Manifold for automated failover.
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <p class="authors">
+          <span class="author-highlight">S. M. Mudavat</span>, A. Mitra, and S. P. Mohanty
+        </p>
+        <p class="title">
+          "TinyVarNet: A Dispersion Gated Dual Kernel Network for Plant-Disease Classification"
+        </p>
+        <p class="venue">Accepted.</p>
+        <div class="impact-box">
+          <strong>Impact:</strong> Achieved 82.03% accuracy on cluttered real-field benchmarks with only 28K parameters — 
+          featuring parameter-free dynamic routing and intrinsic multi-scale spatial explainability for trustworthy edge deployment.
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <p class="authors">
+          <span class="author-highlight">S. M. Mudavat</span>, A. Mitra, and S. P. Mohanty
+        </p>
+        <p class="title">
+          "E2-WeedNet: A Compact Equivariant Network for Shortcut-Aware Crop and Weed Recognition"
+        </p>
+        <p class="venue">Accepted.</p>
+        <div class="impact-box">
+          <strong>Impact:</strong> Engineered a sub-60K parameter C₈ group-equivariant convolutional network with a parameter-free 
+          Group-CAM operator that mitigates background shortcut learning and improves orientation-robust weed recognition.
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Sai Mahesh Mudavat · Built with precision and purpose.</p>
+    </div>
+  </footer>
+
+  <!-- ====== Scripts ====== -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
